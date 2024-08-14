@@ -20,7 +20,7 @@ class Room extends Model
         return $this->belongsTo(Hotel::class);
     }
 
-    public function type_room(){
+    public function room_type(){
         return $this->belongsTo(RoomType::class);
     }
 
