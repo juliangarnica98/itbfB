@@ -18,7 +18,7 @@ class Hotel extends Model
     ];
 
     public function cities(){
-        return $this->belongsTo(City::class);
+        return $this->belongsTo(City::class, 'city_id');
     }
     public function rooms(){
         return $this->hasMany(Room::class);

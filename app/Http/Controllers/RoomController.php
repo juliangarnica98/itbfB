@@ -23,7 +23,7 @@ class RoomController extends Controller
         $this->roomRepository = $roomRepository;
         $this->hotelRepository = $hotelRepository;
     }
-    //Ver haitacion
+    //Ver habitacion
     public function index($id){
         $hotel = $this->hotelRepository->findById($id);
         $data = $this->roomRepository->index($hotel->id);

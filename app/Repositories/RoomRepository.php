@@ -7,7 +7,7 @@ class RoomRepository{
 
     public function index($hotel)
     {   
-        return Room::where('hotel_id',$hotel)->with(['hotel','type_room','accommodations'])->orderBy('id','asc')->paginate(25);
+        return Room::where('hotel_id',$hotel)->with(['hotel','type_room','accommodation'])->orderBy('id','asc')->paginate();
     }
 
     public function create(array $storeData)

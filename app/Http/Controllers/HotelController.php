@@ -25,7 +25,6 @@ class HotelController extends Controller
     //creacion de Hotel
     public function store(Request $request){
 
-     
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'address' => 'required|string|max:255',
@@ -45,6 +44,11 @@ class HotelController extends Controller
         }
 
         $data = $this->hotelRepository->create($request->all());
+        return response()->json(['status'=> 'success','data'=> $data],200);
+    }
+    //consultar hotel {id}
+    public function show($id){
+        $data = $this->hotelRepository->findById($id);
         return response()->json(['status'=> 'success','data'=> $data],200);
     }
 }

@@ -17,6 +17,6 @@ class HotelRepository{
 
     public function findById($id)
     {
-        return Hotel::findOrFail($id);
+        return Hotel::with('cities')->findOrFail($id);
     }
 }
